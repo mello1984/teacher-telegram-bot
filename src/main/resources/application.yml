@@ -1,0 +1,24 @@
+spring.datasource.url: jdbc:postgresql://localhost:5432/teacher_telegram_bot
+spring.datasource.username: postgres
+spring.datasource.password: postgres
+
+spring.jpa.generate-ddl: true
+spring.jpa.hibernate.ddl-auto: update
+spring.jpa.properties.hibernate.show_sql: false
+spring.jpa.properties.hibernate.use_sql_comments: true
+spring.jpa.properties.hibernate.format_sql: true
+
+server.port: 8443
+
+bot.updateperiod: 50
+
+bot.use_self_signed_certificate: true
+################################### Properties for supplied SSL server (i.e. ngrook.io) ################################
+bot.registerWebhookPath: https://api.telegram.org/bot%s/setwebhook?url=%s
+
+################################### Properties for self-signed SSL certificate #########################################
+##################### If you not use self-signed certificate - comment all properties in this block ####################
+security.require-ssl: true
+server.ssl.key-store: classpath:keystore.p12
+server.ssl.keyStoreType: PKCS12
+server.ssl.keyAlias: tomcat
